@@ -1,6 +1,6 @@
 from kunde import Kunde
 from fahrzeug import Fahrzeug
-from datetime import date
+from datetime import datetime
 
 class Mietvertrag:
 
@@ -14,5 +14,14 @@ class Mietvertrag:
     def mietpreis(self) -> float:
         preis = 0
         for einzel_fahrzeug in self.fahrzeug:
-            preis += einzel_fahrzeug.grundpreis * ( date(self.mietende) - date(self.mietbeginn) )
+            from datetime import datetime
+
+            end_datum = datetime.strptime(self.mietende, "%d.%m.%Y").date()
+            beg_datum = datetime.strptime(self.mietbeginn, "%d.%m.%Y").date()
+
+            preis += einzel_fahrzeug.grundpreis * (end_datum - beg_datum).days
+
         return preis
+
+    def beenden():
+        pass
