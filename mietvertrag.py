@@ -1,23 +1,28 @@
 from kunde import Kunde
 from fahrzeug import Fahrzeug
-from datetime import datetime
+from datetime import datetime, date
 
 class Mietvertrag:
 
-    def __init__(self, vertragsnummer: int, mietbeginn: str, mietende: str, kunde: Kunde, fahrzeuge: list[Fahrzeug]):
+    def __init__(self, vertragsnummer: int, kunde: Kunde, fahrzeuge: list[Fahrzeug], mietdauer: int):
         self.vertragsnummer = vertragsnummer
-        self.mietbeginn = mietbeginn
-        self.mietende = mietende
+        self.mietdauer = mietdauer
         self.kunde = kunde
-        self.fahrzeug = fahrzeuge
-    
+
+        for fahrzeug in fahrzeuge:
+            if fahrzeug.verfuegbar == False:
+                print(f"Fahrzeug: {fahrzeug.kennzeichen}, wird aus dem Vertrag entfernt, da nicht verfügbar.")
+                fahrzeuge.remove(fahrzeug)
+
+        self.fahrzeuge = fahrzeuge
+        self.mietbeginn = datetime.now().date()
+        self.mietende = None
+
     def mietpreis(self) -> float:
         preis = 0
-        for einzel_fahrzeug in self.fahrzeug:
-            end_datum = datetime.strptime(self.mietende, "%d.%m.%Y").date()
-            beg_datum = datetime.strptime(self.mietbeginn, "%d.%m.%Y").date()
 
-            preis += einzel_fahrzeug.grundpreis * (end_datum - beg_datum).days
+        for fahrzeug in self.fahrzeuge:
+            preis += fahrzeug.grundpreis * self.mietdauer
 
         return preis
 
