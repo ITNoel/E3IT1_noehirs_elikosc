@@ -14,8 +14,6 @@ class Mietvertrag:
     def mietpreis(self) -> float:
         preis = 0
         for einzel_fahrzeug in self.fahrzeug:
-            from datetime import datetime
-
             end_datum = datetime.strptime(self.mietende, "%d.%m.%Y").date()
             beg_datum = datetime.strptime(self.mietbeginn, "%d.%m.%Y").date()
 
