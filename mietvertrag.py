@@ -1,6 +1,6 @@
 from kunde import Kunde
 from fahrzeug import Fahrzeug
-from datetime import datetime, date
+from datetime import datetime, timedelta
 
 class Mietvertrag:
 
@@ -16,7 +16,7 @@ class Mietvertrag:
 
         self.fahrzeuge = fahrzeuge
         self.mietbeginn = datetime.now().date()
-        self.mietende = None
+        self.mietende = self.mietbeginn + timedelta(days=self.mietdauer)
 
     def mietpreis(self) -> float:
         preis = 0
