@@ -10,3 +10,6 @@ class Fahrzeug:
 
     def ist_verfuegbar(self) -> bool:
         return self.__verfuegbar
+    
+    def get_grundpreis(self) -> float:
+        return self.grundpreis
