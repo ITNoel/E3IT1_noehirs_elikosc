@@ -1,4 +1,5 @@
-class Fahrzeug:
+from abc import ABC, abstractmethod
+class Fahrzeug(ABC):
 
     def __init__(self, kennzeichen: str, grundpreis: float, verfuegbar: bool):
         self.kennzeichen = kennzeichen
@@ -13,3 +14,7 @@ class Fahrzeug:
     
     def get_grundpreis(self) -> float:
         return self.grundpreis
+    
+    @abstractmethod
+    def berechne_mietpreis(self, mietdauer:int) -> float:
+        pass

@@ -26,7 +26,7 @@ class Mietvertrag:
         preis = 0
 
         for fahrzeug in self.fahrzeuge:
-            preis += fahrzeug.grundpreis * self.mietdauer
+            preis += fahrzeug.berechne_mietpreis(mietdauer = self.mietdauer)
 
         return preis
 
@@ -37,3 +37,6 @@ class Mietvertrag:
     def starten(self):
         for fahrzeug in self.fahrzeuge:
             fahrzeug.set_verfuegbar(False)
+    
+    def hinzufuegen_fahrzeug(self, new_fahrzeug:Fahrzeug):
+        self.fahrzeuge.append(new_fahrzeug)

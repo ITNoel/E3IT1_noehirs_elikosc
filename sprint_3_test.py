@@ -3,7 +3,6 @@ from fahrzeug import Fahrzeug
 from fahrrad import Fahrrad
 from e_bike import E_Bike
 from mietvertrag import Mietvertrag
-from pytest import raises
 
 def test_unterschiedliche_fahrzeuge():
     kunde = Kunde("Mina Beispiel", 123)
@@ -21,3 +20,5 @@ def test_unterschiedliche_fahrzeuge():
     assert e_bike.get_grundpreis() == 30.00
     assert e_bike.get_akkukapazitaet() == 500
     assert mietvertrag_e_bike.mietpreis() == 90.00
+
+
