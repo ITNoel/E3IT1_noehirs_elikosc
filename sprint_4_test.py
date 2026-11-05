@@ -3,6 +3,7 @@ from fahrzeug import Fahrzeug
 from fahrrad import Fahrrad
 from e_bike import E_Bike
 from mietvertrag import Mietvertrag
+from pytest import raises
 
 def test_fahrzeuge_berechnen_unterschiedliche_mietpreise(): 
     kunde = Kunde("Mina Beispiel", 123) 
@@ -11,3 +12,8 @@ def test_fahrzeuge_berechnen_unterschiedliche_mietpreise():
     mietvertrag = Mietvertrag(1001, kunde, [fahrrad], 3) 
     mietvertrag.hinzufuegen_fahrzeug(e_bike) 
     assert mietvertrag.mietpreis() == 150.00
+
+
+def test_fahrzeug_erstellen():
+    with raises(TypeError):
+        fahrzeug = Fahrzeug("test", 1, True)
