@@ -1,0 +1,3 @@
+Abgeklärt das RuntimeError schon im Konstruktor des Mietvertrags geworfen wird, inkl. Anpassung am Test.
+
+Fürs Objektdiagramm wird der Letzte Test genommen.

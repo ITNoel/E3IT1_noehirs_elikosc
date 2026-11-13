@@ -15,8 +15,7 @@ class Mietvertrag:
 
         for fahrzeug in fahrzeuge:
             if fahrzeug.ist_verfuegbar() == False:
-                print(f"Fahrzeug: {fahrzeug.kennzeichen}, wird aus dem Vertrag entfernt, da nicht verfügbar.")
-                fahrzeuge.remove(fahrzeug)
+                raise RuntimeError(f"Fahrzeug: {fahrzeug.kennzeichen} nicht verfügbar.")
 
         self.fahrzeuge = fahrzeuge
         self.mietbeginn = datetime.now().date()
@@ -36,6 +35,8 @@ class Mietvertrag:
 
     def starten(self):
         for fahrzeug in self.fahrzeuge:
+            if not fahrzeug.ist_verfuegbar():
+                raise RuntimeError(f"Fahrzeug {fahrzeug.kennzeichen} ist nicht verfuegbar.")
             fahrzeug.set_verfuegbar(False)
     
     def hinzufuegen_fahrzeug(self, new_fahrzeug:Fahrzeug):

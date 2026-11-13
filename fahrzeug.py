@@ -2,6 +2,9 @@ from abc import ABC, abstractmethod
 class Fahrzeug(ABC):
 
     def __init__(self, kennzeichen: str, grundpreis: float, verfuegbar: bool):
+        if grundpreis < 0:
+            raise ValueError("Grundpreis darf nicht negativ sein.")
+        
         self.kennzeichen = kennzeichen
         self.grundpreis = grundpreis
         self.__verfuegbar = verfuegbar
