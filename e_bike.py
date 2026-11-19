@@ -9,5 +9,5 @@ class E_Bike(Fahrzeug):
     def get_akkukapazitaet(self) -> int:
         return self.akku_kapazitaet
     
-    def berechne_mietpreis(self, mietdauer):
+    def berechne_mietpreis(self, mietdauer: int) -> float:
         return self.grundpreis * mietdauer + 5 * mietdauer

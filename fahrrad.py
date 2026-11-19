@@ -9,5 +9,5 @@ class Fahrrad(Fahrzeug):
     def get_anzahl_gaenge(self) -> int:
         return self.anzahl_gaenge
     
-    def berechne_mietpreis(self, mietdauer):
+    def berechne_mietpreis(self, mietdauer:int) -> float:
         return self.grundpreis * mietdauer
