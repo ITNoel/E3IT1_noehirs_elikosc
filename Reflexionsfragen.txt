@@ -1,0 +1,17 @@
+• Welche Modellentscheidung wurde später verändert? 
+    Keine, abweichungen von der Aufgabenstellung wurden im vorraus mit dem Leher geklärt
+
+• Welche ursprüngliche Idee hat sich als problematisch erwiesen? 
+    Fahrzeuge im Mietvertrag als Liste abbilden, da jeder Test angepasst werden musste
+
+• Wo wurde Vererbung eingesetzt? 
+    Fahrzeuge
+
+• Wo wurde Polymorphie eingesetzt? 
+    Bei der Mietpreisberechnung des Fahrzeugs
+
+• Welche Entscheidung würde das Team heute anders treffen? 
+    Nichts, da keine wichtigen Entscheidungen getroffen wurden  
+
+• Was würdet ihr bei einem neuen Projekt zuerst anders planen? 
+    Nicht GitHub für die Planung verwenden

@@ -10,9 +10,12 @@ mietvertrag = Mietvertrag(1001, kunde, [fahrrad], 3)
 
 print(f"Das Fahrrad hat {fahrrad.get_anzahl_gaenge()} Gänge!")
 print(f"Das E-Bike hat eine Akkukapazität von {e_bike.get_akkukapazitaet()}!")
+
 mietvertrag.hinzufuegen_fahrzeug(e_bike)
 mietvertrag.starten()
+
 print(f"Die kompletten Mietkosten betragen: {mietvertrag.mietpreis()}")
+
 try:
     mietvertrag.starten()
 except RuntimeError:
