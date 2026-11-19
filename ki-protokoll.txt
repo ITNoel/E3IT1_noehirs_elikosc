@@ -1,0 +1,1 @@
+Es wurde Ki lediglich im Rahmen von Git Befehelen genutzt, wenn man nicht wusste wie gewisse git Befehle gehen
